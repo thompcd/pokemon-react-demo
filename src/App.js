@@ -7,11 +7,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/pokemon/:id' render={(props) => <Pokemon {...props} />} />
+          <div className='poke-outline'>
+            <Route path='/pokemon/:id' render={(props) => <Pokemon {...props} />} />
+          </div>
         </Switch>
       {/* next / last buttons */}
       </Router>
-
     </div>
   );
 }

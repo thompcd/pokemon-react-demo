@@ -27,13 +27,17 @@ const Pokemon = () => {
 
   return (
     <div
-      className={`pokeCard pokeCard--${
+      className={`poke-card pokeCard--${
         pokemon.types && pokemon.types[0].type['name']
       }`}
     >
-      <div className='pokeCard__header'>
-        <h2 className='pokeCard__name'>{name}</h2>
-        <div className='pokeCard__stats'>
+        <div className='poke-name'>
+            <h3>NO. {id}</h3>
+            <h2 className='pokemon-name'>{name}</h2>
+        </div>
+      <div className='poke-stats'>
+        <h3>Base Stats</h3>
+        <div>
           {pokemon.stats &&
             pokemon.stats.map((stat, index) => {
               return (
@@ -47,42 +51,43 @@ const Pokemon = () => {
             })}
         </div>
       </div>
-      <div className='pokeCard__imgContainer'>
+
+      <div className='poke-img'>
         <img
-          className='pokeCard__img'
+          className='sprite'
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
           alt='pokemon-pic'
         />
       </div>
-      <div className='pokeCard__basics'>
-        <span>NO. {id}</span>
-        <span>Height: {height}</span>
-        <span>Weight: {weight}</span>
-        <span>Base XP:{base_experience}</span>
-      </div>
 
-      <ul className='pokeCard__abilities'>
-        {pokemon.abilities &&
-          pokemon.abilities.map((ability, index) => {
-            return (
-              <li className='pokeCard__ability' key={index}>
-                {ability['ability']['name']}
-              </li>
-            );
-          })}
-      </ul>
-      <ul className='pokeCard__types'>
-        {pokemon.types &&
-          pokemon.types.map((type, index) => {
-            return (
-              <li className='pokeCard__type' key={index}>
-                {type['type']['name']}
-              </li>
-            );
-          })}
-      </ul>
-      <a href={previousPokemon()}>Previous</a>
-      <a href={nextPokemon()}>Next</a>
+      <div className='poke-info'>
+        <h3>Abilities</h3>
+        <ul className='abilities'>
+            {pokemon.abilities &&
+            pokemon.abilities.map((ability, index) => {
+                return (
+                    <li className='ability' key={index}>
+                    {ability['ability']['name']}
+                </li>
+                );
+            })}
+        </ul>
+        <ul className='types'>
+            {pokemon.types &&
+            pokemon.types.map((type, index) => {
+                return (
+                    <li className={`type ${type['type']['name']}`}
+                    key={index}>
+                    {type['type']['name']}
+                </li>
+                );
+            })}
+        </ul>
+    </div>
+      <div className='page-nav'>
+        <a href={previousPokemon()}>Previous</a>
+        <a href={nextPokemon()}>Next</a>
+      </div>
     </div>
   );
 };

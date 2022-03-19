@@ -1,0 +1,194 @@
+
+.App{
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+      15deg,
+      rgba(41, 41, 41, 1) 4%,
+      rgba(49, 49, 49, 1) 24%,
+      rgba(128, 128, 128, 1) 64%,
+      rgba(138, 138, 138, 1) 70%,
+      rgba(230, 230, 230, 1) 81%,
+      rgba(255, 255, 255, 1) 86%,
+      rgba(220, 220, 220, 1) 89%,
+      rgba(230, 230, 230, 1) 100%
+  );
+  background-color: #09a8ff;
+  background-blend-mode: overlay;
+}
+
+.poke-outline{
+  display: flex;
+  justify-content: center;
+}
+
+.poke-card {  
+  background-color: white;
+  height: 700px;
+  width: 700px;
+  align-self: center;
+  outline: 4px solid black;
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". poke-name ."
+    "poke-info poke-img poke-stats"
+    ". page-nav .";
+}
+
+.poke-img { 
+  margin: auto;
+  grid-area: poke-img;
+}
+.sprite {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  image-rendering: pixelated;
+  border: inset #9aa28b 3px;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background: linear-gradient(15deg, #cad5b5 64%, #dde2d4 70%, #dde2d4 81%, #fff 86%, #dde2d4 89%, #dde2d4 100%);
+}
+
+.page-nav { 
+  margin: auto;
+  grid-area: page-nav; 
+}
+  .page-nav a{
+    margin: 0 1rem;
+  }
+
+.poke-info { 
+  margin: auto;
+  grid-area: poke-info; 
+}
+.type{
+  list-style-type: none;
+
+  color: rgba(0, 0, 0, 0.9);
+  text-transform: capitalize;
+  font-size: 1.25em;
+  padding: 2px;
+  margin: 2px;
+  border: groove #757575 3px;
+  border-radius: 10px;
+  width: 150px;
+  font-family: "Staatliches", cursive;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: rgba(255, 255, 255, 0.3) -1px 1px;
+  align-self: center;
+  background: linear-gradient(
+      15deg,
+      rgba(128, 128, 128, 0.5) 64%,
+      rgba(138, 138, 138, 0.5) 70%,
+      rgba(230, 230, 230, 0.5) 81%,
+      rgba(255, 255, 255, 0.5) 86%,
+      rgba(220, 220, 220, 0.5) 89%,
+      rgba(230, 230, 230, 0.5) 100%
+  );
+  background-blend-mode: hard-light;
+}
+
+.poke-stats { 
+  margin: auto;
+  grid-area: poke-stats; 
+}
+
+.poke-name { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: poke-name; 
+
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+  height: 45px;
+  box-sizing: border-box;
+}
+.poke-name h3{
+  margin-bottom: 0.2rem;
+}
+
+.screen {
+  background: linear-gradient(14deg, rgb(165, 205, 83) 60%, rgb(193, 217, 144) 65%);
+  padding: 5px;
+  border-radius: 3px;
+  font-family: "VT323";
+  border: inset #879a65 3px;
+}
+
+.normal {
+  background-color: #bfbfbf;
+}
+.fighting {
+  background-color: #d87c58;
+}
+.flying {
+  background-color: #999ade;
+}
+.poison {
+  background-color: #925192;
+}
+.ground {
+  background-color: #dea761;
+}
+.rock {
+  background-color: #897864;
+}
+.bug {
+  background-color: #b1c967;
+}
+.ghost {
+  background-color: #c195dc;
+}
+.steel {
+  background-color: #49769c;
+}
+.fire {
+  background-color: #cf1414;
+}
+.water {
+  background-color: #1689de;
+}
+.grass {
+  background-color: #47a047;
+}
+.electric {
+  background-color: #e6b700;
+}
+.psychic {
+  background-color: #fa43b8;
+}
+.ice {
+  background-color: #98c3de;
+}
+.dragon {
+  background-color: #89315d;
+}
+.dark {
+  background-color: #282433;
+}
+.fairy {
+  background-color: #dca0ce;
+}
+.unknown {
+  background-color: #545454;
+}
+.shadow {
+  background-color: #364163;
+}
+
