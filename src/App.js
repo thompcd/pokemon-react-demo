@@ -1,6 +1,6 @@
 import './App.css';
 import Pokemon from './components/Pokemon';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (

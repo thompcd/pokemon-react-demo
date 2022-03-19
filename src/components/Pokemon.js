@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getPokemon } from '../services/pokemon';
 import { useLocation } from 'react-router-dom';
+import StatLine from './StatLine';
 
 const Pokemon = () => {
   const location = useLocation();
@@ -25,28 +26,30 @@ const Pokemon = () => {
     return "/pokemon/" + (num - 1)
   }
 
+  console.log(pokemon)
   return (
     <div
       className={`poke-card pokeCard--${
         pokemon.types && pokemon.types[0].type['name']
       }`}
     >
-        <div className='poke-name panel'>
+        <div className='poke-name panel screen'>
             <span className='pokemon-name'>{name} </span>
             <span className='poke-id'>no. {id}</span>
         </div>
-      <div className='poke-stats'>
+      <div className='poke-stats panel screen'>
         <h3>Base Stats</h3>
         <div>
           {pokemon.stats &&
             pokemon.stats.map((stat, index) => {
               return (
-                <p key={index}>
-                  {stat['stat']['name']}:
-                  <span className='pokeCard__item'>
-                    <strong>{stat.base_stat}</strong>
-                  </span>
-                </p>
+                  <StatLine name={stat['stat']['name']} value={stat['base_stat']} />
+                // <p key={index}>
+                //   {stat['stat']['name']}:
+                //   <span className='pokeCard__item'>
+                //     <strong>{stat.base_stat}</strong>
+                //   </span>
+                // </p>
               );
             })}
         </div>
@@ -61,17 +64,19 @@ const Pokemon = () => {
       </div>
 
       <div className='poke-info'>
-        <h3>Abilities</h3>
-        <ul className='abilities'>
-            {pokemon.abilities &&
-            pokemon.abilities.map((ability, index) => {
-                return (
-                    <li className='ability' key={index}>
-                    {ability['ability']['name']}
-                </li>
-                );
-            })}
-        </ul>
+            <div className='abilities-panel panel screen'>
+                <h3>Abilities</h3>
+                <ul className='abilities'>
+                    {pokemon.abilities &&
+                    pokemon.abilities.map((ability, index) => {
+                        return (
+                            <li className='ability' key={index}>
+                            {ability['ability']['name']}
+                        </li>
+                        );
+                    })}
+                </ul>
+            </div>
         <ul className='types'>
             {pokemon.types &&
             pokemon.types.map((type, index) => {
