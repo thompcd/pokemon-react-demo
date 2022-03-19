@@ -77,7 +77,7 @@ const Pokemon = () => {
                     })}
                 </ul>
             </div>
-        <ul className='types'>
+            <ul className='types'>
             {pokemon.types &&
             pokemon.types.map((type, index) => {
                 return (
@@ -88,6 +88,8 @@ const Pokemon = () => {
                 );
             })}
         </ul>
+    </div>
+    <div className='poke-type'>
     </div>
       <div className='page-nav'>
         <a href={previousPokemon()}>Previous</a>
