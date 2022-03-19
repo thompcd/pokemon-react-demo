@@ -31,9 +31,9 @@ const Pokemon = () => {
         pokemon.types && pokemon.types[0].type['name']
       }`}
     >
-        <div className='poke-name'>
-            <h3>NO. {id}</h3>
-            <h2 className='pokemon-name'>{name}</h2>
+        <div className='poke-name panel'>
+            <span className='pokemon-name'>{name} </span>
+            <span className='poke-id'>no. {id}</span>
         </div>
       <div className='poke-stats'>
         <h3>Base Stats</h3>
