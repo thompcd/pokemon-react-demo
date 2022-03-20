@@ -71,7 +71,7 @@ const Pokemon = () => {
           alt='pokemon-pic'
         />
       </div>
-      {/* <div className='poke-type'>
+      <div className='poke-type'>
         <ul className='types'>
               {pokemon.types &&
               pokemon.types.map((type, index) => {
@@ -83,7 +83,7 @@ const Pokemon = () => {
                   );
               })}
           </ul>
-      </div> */}
+      </div>
       <div className='page-nav'>
         <a href={previousPokemon()}>Previous</a>
         <a href={nextPokemon()}>Next</a>
