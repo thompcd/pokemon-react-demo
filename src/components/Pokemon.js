@@ -14,7 +14,7 @@ const Pokemon = () => {
     });
   }, [location.pathname]);
 
-  const { id, name, height, weight, base_experience } = pokemon;
+  const { id, name } = pokemon;
 
   let s = location.pathname.split('/')
   let num = +(s[s.length - 1])
@@ -85,8 +85,8 @@ const Pokemon = () => {
           </ul>
       </div>
       <div className='page-nav blue-buttons'>
-        <a className='button' href={previousPokemon()}></a>
-        <a className='button' href={nextPokemon()}></a>
+        <a className='button' href={previousPokemon()}> </a>
+        <a className='button' href={nextPokemon()}> </a>
       </div>
     </div>
   );
