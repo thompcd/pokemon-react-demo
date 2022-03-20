@@ -35,24 +35,35 @@ text{
 
 .poke-card {  
   background-color: #e61515;
-  width: 900px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 1em;
   border-radius: 15px;
   border: double black 10px;
   display: flex;
 
   align-self: center;
   display: grid;
-  grid-template-columns: 0.8fr 1.8fr 0.8fr;
-  grid-template-rows: 0.7fr 1.8fr 1fr;
-  gap: 16px 16px;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: 1em 1em;
   grid-auto-flow: row;
   grid-template-areas:
-    "poke-name poke-name poke-name"
-    "poke-info poke-img poke-stats"
-    "poke-type page-nav .";
+    "poke-name poke-name"
+    "poke-img poke-details"
+    "page-nav poke-type";
+}
+
+.poke-details {  
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 1em 1em; 
+    grid-template-areas: 
+      "poke-stats"
+      "poke-info"; 
+    grid-area: poke-details;
 }
 
 .poke-img { 
@@ -83,28 +94,25 @@ text{
 
 .poke-info { 
   grid-area: poke-info; 
-
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 .abilities-panel{
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.abilities{
-  list-style-type: none;
-}
+
 .abilities-panel ul{
+  list-style-type: none;
+
   margin: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .abilities-panel li{
   margin: 0;
   padding: 0;
 }
+
 .types{
   margin: 0;
   padding: 0;
@@ -181,15 +189,12 @@ text{
   text-transform: lowercase;
 }
 .panel {
-  padding: 10px;
   border: inset #b31818 3px;
   border-radius: 3px;
 }
 
 .screen {
   background: linear-gradient(14deg, rgb(165, 205, 83) 60%, rgb(193, 217, 144) 65%);
-  padding: 5px;
-  border-radius: 3px;
   font-family: "VT323";
   border: inset #879a65 3px;
 }
