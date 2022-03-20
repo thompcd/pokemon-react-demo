@@ -84,9 +84,9 @@ const Pokemon = () => {
               })}
           </ul>
       </div>
-      <div className='page-nav'>
-        <a href={previousPokemon()}>Previous</a>
-        <a href={nextPokemon()}>Next</a>
+      <div className='page-nav blue-buttons'>
+        <a className='button' href={previousPokemon()}></a>
+        <a className='button' href={nextPokemon()}></a>
       </div>
     </div>
   );

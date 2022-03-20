@@ -1,4 +1,3 @@
-
 text{
   font-family: "Staatliches", cursive;
 }
@@ -8,11 +7,16 @@ text{
   position: absolute;
   left: 0;
   width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
   margin: 0;
   padding: 0;
+  background-color: #09a8ff;
+}
+
+.color-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   background: linear-gradient(
       15deg,
       rgba(41, 41, 41, 1) 4%,
@@ -35,8 +39,8 @@ text{
 
 .poke-card {  
   background-color: #e61515;
-  width: 800px;
-  height: 800px;
+  max-width: 800px;
+  max-height: 800px;
   margin: 0 auto;
   padding: 1em;
   border-radius: 15px;
@@ -56,20 +60,29 @@ text{
 }
 
 .poke-details {  
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 1em 1em; 
-    grid-template-areas: 
-      "poke-stats"
-      "poke-info"; 
-    grid-area: poke-details;
+  min-width: 164px;
+  min-height: 164px;
+
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 1em 1em; 
+  grid-template-areas: 
+    "poke-stats"
+    "poke-info"; 
+  grid-area: poke-details;
+}
+
+.poke-type{
+  margin: auto;
+  grid-area: poke-type;
 }
 
 .poke-img { 
   margin: auto;
   grid-area: poke-img;
-
+  min-width: 620px;
+  min-height: 620px;
   width: 100%;
   height: 100%;
 }
@@ -84,19 +97,89 @@ text{
   background: linear-gradient(15deg, #cad5b5 64%, #dde2d4 70%, #dde2d4 81%, #fff 86%, #dde2d4 89%, #dde2d4 100%);
 }
 
+.button {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: outset rgb(248, 187, 187) 6px;
+  transform: rotate(60deg);
+  background: radial-gradient(
+      circle farthest-corner at 40% 25%,
+      rgb(218, 237, 241) 9%,
+      rgb(124, 214, 237) 20%,
+      rgb(64, 90, 165) 62%,
+      rgb(43, 125, 196) 100%
+  );
+  cursor: pointer;
+}
+.button:hover {
+  background: radial-gradient(
+      circle farthest-corner at 40% 25%,
+      rgb(233, 241, 218) 9%,
+      rgb(184, 237, 124) 20%,
+      rgb(64, 165, 106) 62%,
+      rgb(43, 196, 145) 100%
+  );
+}
+.button:active {
+  background: radial-gradient(
+      circle farthest-corner at 40% 25%,
+      rgb(229, 255, 181) 9%,
+      rgb(204, 237, 124) 20%,
+      rgb(103, 165, 64) 62%,
+      rgb(66, 204, 40) 100%
+  );
+}
+.button::after {
+  border: groove #460f0f 5px;
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border-radius: 50%;
+  left: -10px;
+  top: -10px;
+  border-style: double;
+  opacity: 0.75;
+}
+.blue-buttons {
+  flex-wrap: wrap;
+  padding: 5px;
+}
+.blue-button {
+  height: 30px;
+  flex: 1 1 16%;
+  margin: 3px;
+  border: groove #6c96e6 3px;
+  border-radius: 5px;
+  background: linear-gradient(
+      15deg,
+      rgba(128, 128, 128, 0.5) 64%,
+      rgba(138, 138, 138, 0.5) 70%,
+      rgba(230, 230, 230, 0.5) 81%,
+      rgba(255, 255, 255, 0.5) 86%,
+      rgba(220, 220, 220, 0.5) 89%,
+      rgba(230, 230, 230, 0.5) 100%
+  );
+  background-blend-mode: hard-light;
+  background-color: #09a8ff;
+}
+
 .page-nav { 
   margin: auto;
   grid-area: page-nav; 
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
 }
-  .page-nav a{
-    margin: 0 1rem;
-  }
 
 .poke-info { 
   grid-area: poke-info; 
 }
 .abilities-panel{
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,9 +250,9 @@ text{
 
 .poke-name { 
   display: block;
-  flex-direction: row;
-  align-items: center;
   grid-area: poke-name; 
+
+  padding: 8px;
 
   font-size: 28px;
   letter-spacing: 4px;
